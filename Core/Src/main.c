@@ -91,13 +91,12 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_IWDG_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   Task_Init();
-  HAL_TIM_Base_Start(&htim2);
+  HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE END 2 */
-
+  MX_IWDG_Init();
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
